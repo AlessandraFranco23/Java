@@ -31,43 +31,43 @@ public class ExercicioUm {
         switch (menu) {
             // 1) Crie um programa que calcule a média (`(nota1 + nota2 + nota3 / 3)`)
             case 1:
-                // media(double notaUm, double notaDois, double notaTres)
+                System.out.println("A média é:" + media(10, 2, 8));
                 break;
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
             case 2:
-                // area(double ladoUm, double ladoDois)
+                System.out.println("A área " + area(5, 2));
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
             case 3:
-                // volume(double largura, double altura, double profundidade)
+                System.out.println ("O volume é:" + volume( 10, 6, 3));
                 break;
             // 4) Crie um programa que avalie se um valor é maior do que o dobro de outro valor
             case 4:
-                // valorMaiorQueDobro(double base, double verificar)
+                System.out.println("Esse número é maior que a base:" + valorMaiorQueDobro(20, 51));
                 break;
             // 5) Crie um programa que calcule _bhaskara_
             case 5:
-                // bhaskara(int a, int b, int c);
+                //System.out.println ("O resultado de baskara é:" + bhaskara(5, 15, 9));
                 break;
             // 6) Crie um programa que calcule a velocidade média de uma viagem (`distancia (km) / tempo (h)`)
             case 6:
-                // mediaViagem(double distancia, double tempo)
+                //System.out.println("A velocidade média da viagem é: " + mediaViagem(80, 3)); 
                 break;
             // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \ qtd imposto`)
             case 7:
-                // percentualImposto(double faturamento, double qtdImposto)
+                //System.out.println("O porcentual do imposto é: " + percentualImposto(20, 10)
                 break;
             // 8) Crie um programa que teste se um valor é par ou ímpar
             case 8:
-                // parOuImpar(int valor)
+                //System.out.println("Esse valor é: " + parOuImpar(32)); 
                 break;
             // 9) Crie um programa que compare dois valores Strings
             case 9:
-                // compareString(String stringUm, String stringDois)
+                //System.out.println("Esse valor é:" + compareString(String stringUm, String stringDois)); 
                 break;
             // 10) Crie um programa que tenha uma variável com ponto em String e converta seu valor para inteiro
             case 10:
-                // convertString(String valor);
+                //System.out.println("" + convertString(String valor));
                 break;
             // 11) Crie um programa que receba o salário e diga o valor de imposto de renda conforme abaixo:
             // Base                     | Alíquota
@@ -91,19 +91,19 @@ public class ExercicioUm {
     }
 
     public static double media(double notaUm, double notaDois, double notaTres) {
-        return 0;
+        return (notaUm+notaDois+notaTres) / 3;
     }
 
     public static double area(double ladoUm, double ladoDois) {
-        return 0;
+        return (ladoUm*ladoDois);
     }
 
     public static double volume(double largura, double altura, double profundidade) {
-        return 0;
+        return (largura*altura*profundidade);
     }
 
     public static boolean valorMaiorQueDobro(double base, double verificar) {
-        return false;
+        return (base*2<verificar);
     }
 
     public static double[] bhaskara(int a, int b, int c) {

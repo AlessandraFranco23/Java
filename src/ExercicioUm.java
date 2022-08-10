@@ -47,19 +47,19 @@ public class ExercicioUm {
                 break;
             // 5) Crie um programa que calcule _bhaskara_
             case 5:
-                //System.out.println ("O resultado de baskara é:" + bhaskara(5, 15, 9));
+                System.out.println ("O resultado de baskara é:" + bhaskara(1, 4, 1));
                 break;
             // 6) Crie um programa que calcule a velocidade média de uma viagem (`distancia (km) / tempo (h)`)
             case 6:
-                //System.out.println("A velocidade média da viagem é: " + mediaViagem(80, 3)); 
+                System.out.println("A velocidade média da viagem é: " + mediaViagem(80, 3)); 
                 break;
             // 7) Crie um programa que calcule o percentual de imposto pago (`faturamento \ qtd imposto`)
             case 7:
-                //System.out.println("O porcentual do imposto é: " + percentualImposto(20, 10)
+                System.out.println("O porcentual do imposto é: " + percentualImposto(100, 20));
                 break;
             // 8) Crie um programa que teste se um valor é par ou ímpar
             case 8:
-                //System.out.println("Esse valor é: " + parOuImpar(32)); 
+                System.out.println("Esse valor é par? " + parOuImpar(32)); 
                 break;
             // 9) Crie um programa que compare dois valores Strings
             case 9:
@@ -67,7 +67,7 @@ public class ExercicioUm {
                 break;
             // 10) Crie um programa que tenha uma variável com ponto em String e converta seu valor para inteiro
             case 10:
-                //System.out.println("" + convertString(String valor));
+                System.out.println("O número convertido é " + convertString(valor:5.5));
                 break;
             // 11) Crie um programa que receba o salário e diga o valor de imposto de renda conforme abaixo:
             // Base                     | Alíquota
@@ -78,7 +78,7 @@ public class ExercicioUm {
             // De 3.751,06 até 4.664,68 | 22,5%
             // Acima de 4.664,68        | 27,5%
             case 11:
-                // percentualImpostoSalario(double salario);
+                System.out.println("O imposto é" + percentualImpostoSalario( 1999.99));
                 break;
             // DESAFIO - Crie um programa que teste se um número é primo
             case 12:
@@ -103,19 +103,40 @@ public class ExercicioUm {
     }
 
     public static boolean valorMaiorQueDobro(double base, double verificar) {
-        return (base*2<verificar);
+        if (base>verificar*2)
+        return true; 
+            else 
+                return false;
+            
+        
+        
     }
 
     public static double[] bhaskara(int a, int b, int c) {
-        return new double[2];
+        double delta = (b*b)-(4*a*c);
+        double x1=0;
+        double x2=0;
+        if (delta < 0) {
+            System.out.println("Delta é negativo");
+        } else if (delta ==0) {
+            x1 = -b/(2*a);
+            x2 = x1; 
+        } else {
+            x1 = (-b + Math.sqrt(delta)) / (2*a);
+            x2 = (-b - Math.sqrt(delta)) / (2*a);
+        }
+        System.out.println(x1);
+        System.out.println(x2);
+
+        return new double[] {x1,x2};
     }
 
     public static double mediaViagem(double distancia, double tempo) {
-        return 0;
+        return (distancia/tempo);
     }
 
     public static double percentualImposto(double faturamento, double qtdImposto) {
-        return 0;
+        return (qtdImposto*100)/faturamento;
     }
 
     public static boolean parOuImpar(int valor) {
@@ -126,11 +147,22 @@ public class ExercicioUm {
         return false;
     }
 
-    public static int convertString(String valor) {
-        return 0;
+    public static int convertString(String valor) { 
+        return {int} Double.parseDouble(valor);
     }
 
     public static double percentualImpostoSalario(double salario) {
+        if (salario <= 1903.98 ){
+            return 0;
+        } else if (salario <= 1903.99 && salario >= 2826.65) {
+            return 7.5;
+        } else if (salario <= 1903.99 && salario >= 2826.65) {
+            return 15;
+        }else if (salario <= 1903.99 && salario >= 2826.65){
+            return 22.5;
+        }else if (salario <= 1903.99 && salario >= 2826.65){
+        return 27.5;
+        }
         return -1;
     }
 

@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import javax.print.attribute.standard.Media;
+
 public class ExercicioUm {
 
     public static void call(Scanner scanner) {
@@ -31,11 +33,19 @@ public class ExercicioUm {
         switch (menu) {
             // 1) Crie um programa que calcule a média (`(nota1 + nota2 + nota3 / 3)`)
             case 1:
-                System.out.println("A média é:" + media(10, 2, 8));
+                System.out.println("Digite a nota: ");
+                Scanner nota = new Scanner(System.in);
+                double media = nota.nextDouble();
+                System.out.println("A média é:"  + media);
                 break;
             // 2) Crie um programa que calcule a área (`lado1 * lado2`)
             case 2:
-                System.out.println("A área " + area(5, 2));
+                /*double area[] = new double[2];
+                for(int i = 1; i < area.length; i++)
+                System.out.print("Digite o " +(i)+"º lado: ");
+                Scanner lado = new Scanner (System.in);
+                double mediaArea = lado.nextDouble();
+                System.out.println("A área " + area);*/
                 break;
             // 3) Crie um programa que calcule o volume (`largura * altura * profundidade`)
             case 3:
@@ -67,7 +77,7 @@ public class ExercicioUm {
                 break;
             // 10) Crie um programa que tenha uma variável com ponto em String e converta seu valor para inteiro
             case 10:
-                System.out.println("O número convertido é " + convertString(valor:5.5));
+                //System.out.println("O número convertido é " + convertString(5));
                 break;
             // 11) Crie um programa que receba o salário e diga o valor de imposto de renda conforme abaixo:
             // Base                     | Alíquota
@@ -148,7 +158,7 @@ public class ExercicioUm {
     }
 
     public static int convertString(String valor) { 
-        return {int} Double.parseDouble(valor);
+        return 0;
     }
 
     public static double percentualImpostoSalario(double salario) {
@@ -156,11 +166,11 @@ public class ExercicioUm {
             return 0;
         } else if (salario <= 1903.99 && salario >= 2826.65) {
             return 7.5;
-        } else if (salario <= 1903.99 && salario >= 2826.65) {
+        } else if (salario <= 2826.66 && salario >= 3751.05) {
             return 15;
-        }else if (salario <= 1903.99 && salario >= 2826.65){
+        }else if (salario <= 3751.06  && salario >= 4664.68 ){
             return 22.5;
-        }else if (salario <= 1903.99 && salario >= 2826.65){
+        }else if (salario >= 4664.68){
         return 27.5;
         }
         return -1;

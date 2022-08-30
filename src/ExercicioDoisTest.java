@@ -1,4 +1,5 @@
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import org.junit.Test;
 
@@ -48,6 +49,12 @@ public class ExercicioDoisTest {
         assertEquals(letras[5], 'o');
         assertEquals(letras[6], 'n');
     }
+
+    @Test
+    public void letraALetraInvalidoTest() {
+        assertThrows(IllegalArgumentException.class, () -> ExercicioDois.letraALetra(""));
+    }
+
     @Test
     public void numerosImparesTest() {
         assertEquals(9072, ExercicioDois.numerosImpares(), 0.0f);

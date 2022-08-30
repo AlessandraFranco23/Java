@@ -31,7 +31,11 @@ public class ExercicioDois {
         switch (menu) {
             // 1) Crie um programa que receba três notas calcule a média e diga se foi aprovado (`(nota1 + nota2 + nota3 / 3)`) e (`média maior que 7 para ser aprovado`).
             case 1:
-                // calculaMedia(double notaUm, double notaDois, double notaTres);
+                // System.out.println();
+                // double notaUm = scanner.nextInt();
+                // double notaDois;
+                // double notaTres;
+                // calculaMedia(notaUm,  notaDois, notaTres);
                 break;
             // 2) Crie um programa que receba um número e indique o mês que representa.
             case 2:
@@ -47,7 +51,18 @@ public class ExercicioDois {
                 break;
             // 5) Crie um programa que receba uma String e imprima linha a linha suas letras.
             case 5:
-                // letraALetra(String palavra);
+                System.out.println("Digite uma palavra");
+                try {
+                    Scanner scannerPalavra = new Scanner(System.in);
+                    String palavra = scannerPalavra.nextLine();
+                    char[] letras = letraALetra(palavra);
+                    for (char c : letras) {
+                        System.out.println(c);
+                    }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
+                
                 break;
             // 6) Crie um programa que de a soma de todos os números ímpares e múltiplos de 7 entre 1 e 500.
             case 6:
@@ -100,7 +115,12 @@ public class ExercicioDois {
     }
 
     public static char[] letraALetra(String palavra) {
-        return new char[1];
+        if (palavra == null || palavra == "") throw new IllegalArgumentException("Palavra deve conter valor");
+        char[] letras = new char[palavra.length()];
+        for (int i = 0; i < palavra.length(); i++) {
+            letras[i] = palavra.charAt(i);
+        }
+        return letras;
     }
 
     public static int numerosImpares() {
@@ -124,6 +144,11 @@ public class ExercicioDois {
     }
 
     public static int[] notasNecessarias(int valor) {
-        return new int[6];
+        int[] notas = new int[6];
+        // // Notas: R$ 200, R$ 100, R$ 50, R$ 10, R$ 5, R$ 1 <br> Exemplo: R$ 15 -> 1 nota
+        // // de R$ 10 e 1 nota de R$ 5
+        
+
+        return notas;
     }
 }

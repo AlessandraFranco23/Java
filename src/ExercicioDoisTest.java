@@ -25,7 +25,7 @@ public class ExercicioDoisTest {
     }
     @Test
     public void tabuadaTest() {
-        int[] tabuada = new int[]{ 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
+        int[] tabuada = new int[]{ 0,5, 10, 15, 20, 25, 30, 35, 40, 45, 50 };
         int[] tabuadaCalculada = ExercicioDois.tabuada(5);
         assertEquals(tabuada[0], tabuadaCalculada[0]);
         assertEquals(tabuada[1], tabuadaCalculada[1]);
@@ -73,12 +73,12 @@ public class ExercicioDoisTest {
     }
     @Test
     public void imcTest() {
-        assertEquals(13.88888, ExercicioDois.imc(1.8, 50), 0.0003f);
-        assertEquals(19.44444, ExercicioDois.imc(1.8, 70), 0.0003f);
-        assertEquals(25.00000, ExercicioDois.imc(1.8, 90), 0.0003f);
-        assertEquals(30.55555, ExercicioDois.imc(1.8, 110), 0.0003f);
-        assertEquals(36.11111, ExercicioDois.imc(1.8, 130), 0.0003f);
-        assertEquals(41.66666, ExercicioDois.imc(1.8, 150), 0.0003f);
+        assertEquals(15.432098765432098, ExercicioDois.imc(1.8, 50), 0.0003f);
+        assertEquals(21.604938271604937, ExercicioDois.imc(1.8, 70), 0.0003f);
+        assertEquals(27.777777777777775, ExercicioDois.imc(1.8, 90), 0.0003f);
+        assertEquals(33.95061728395061, ExercicioDois.imc(1.8, 110), 0.0003f);
+        assertEquals(40.123456790123456, ExercicioDois.imc(1.8, 130), 0.0003f);
+        assertEquals(46.29629629629629, ExercicioDois.imc(1.8, 150), 0.0003f);
     }
     @Test
     public void operadorTest() {

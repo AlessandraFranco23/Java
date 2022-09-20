@@ -5,20 +5,20 @@ import org.junit.Test;
 public class ExercicioUmTest {
     @Test
     public void mediaTest() {
-        //assertEquals(5.0f, ExercicioUm.media(4,5,6), 0.0003f);
+        assertEquals(5.0f, ExercicioUm.media(4,5,6), 0.0003f);
     }
     @Test
     public void areaTest() {
-        //assertEquals(16.0f, ExercicioUm.area(4,4), 0.0003f);
+        assertEquals(16.0f, ExercicioUm.area(4,4), 0.0003f);
     }
     @Test
     public void volumeTest() {
-        //assertEquals(64.0f, ExercicioUm.volume(4,4,4), 0.0003f);
+        assertEquals(64.0f, ExercicioUm.volume(4,4,4), 0.0003f);
     }
     @Test
     public void valorMaiorQueDobroTest() {
-        //assertEquals(true, ExercicioUm.valorMaiorQueDobro(9,4));
-        //assertEquals(false, ExercicioUm.valorMaiorQueDobro(7,4));
+        assertEquals(true, ExercicioUm.valorMaiorQueDobro(9,4));
+        assertEquals(false, ExercicioUm.valorMaiorQueDobro(7,4));
     }
     @Test
     public void bhaskaraTest() {

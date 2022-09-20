@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.math.BigInteger;
 import java.util.Random;
 import java.util.Scanner;
@@ -34,27 +36,45 @@ public class ExercicioTres {
         }
 
         switch (menu) {
-            // 1) Crie um programa que receba um valor e calcule a tabuada deste valor, salvando seu resultado em um arquivo de texto.
+            // 1) Crie um programa que receba um valor e calcule a tabuada deste valor,
+            // salvando seu resultado em um arquivo de texto.
             case 1:
-                // tabuada(int number);
+                System.out.println("Informe a tabuada:");
+                int numeroTabuada = scanner.nextInt();
+
+                tabuada(numeroTabuada);
                 break;
-            // 2) Crie um programa que leia e imprima no console todas as linhas de um arquivo de texto.
+            // 2) Crie um programa que leia e imprima no console todas as linhas de um
+            // arquivo de texto.
             case 2:
-                // lerArquivoTexto(String arquivo);
+                System.out.println("Informe a nome do arquivo:");
+                String nomeArquivo= scanner.next();
+
+                lerArquivoTexto( nomeArquivo);
                 break;
-            // 3) Crie um programa que receba como entrada da classe Main dois valores numéricos e calcule as operações básicas com eles.
+            // 3) Crie um programa que receba como entrada da classe Main dois valores
+            // numéricos e calcule as operações básicas com eles.
             case 3:
+
                 // operacoesBasicas(int numeroUm, int numeroDois)
                 break;
-            // 4) Crie um programa que execute uma operação de Exponenciação com o valor inteiro com precisão arbitrária.
+            // 4) Crie um programa que execute uma operação de Exponenciação com o valor
+            // inteiro com precisão arbitrária.
             case 4:
-                // bigIntExpo(BigInteger base, int pow);
+                
+                System.out.println("Informe a base:");
+                BigInteger base = BigInteger.valueOf(scanner.nextInt());
+                
+                System.out.println("Informe a exponencial:");
+                int pow = scanner.nextInt();
+                bigIntExpo(base,  pow);
                 break;
             // 5) Crie um programa que receba o nome de 5 pessoas e aleatorize eles.
             case 5:
                 // aleatorizarPessoas();
                 break;
-            // 6) Crie um programa que calcule o raio e a área de uma circunferência (`C = 2πr` e `A = π(r²)`).
+            // 6) Crie um programa que calcule o raio e a área de uma circunferência (`C =
+            // 2πr` e `A = π(r²)`).
             case 6:
                 // areaECircunferencia(double raio);
                 break;
@@ -62,15 +82,19 @@ public class ExercicioTres {
             case 7:
                 // hasJava(String arquivo);
                 break;
-            // 8) Crie um programa que leia as linhas de um arquivo e imprima no console apenas os 10 primeiros digitos de cada linha.
+            // 8) Crie um programa que leia as linhas de um arquivo e imprima no console
+            // apenas os 10 primeiros digitos de cada linha.
             case 8:
-                // dezDigitos()
+                // dezDig aitos()
                 break;
-            // 9) Crie um programa que receba como entrada da classe Main dois valores numéricos e calcule a área dos valores (`area = lado1 * lado2`).
+            // 9) Crie um programa que receba como entrada da classe Main dois valores
+            // numéricos e calcule a área dos valores (`area = lado1 * lado2`).
             case 9:
                 // calculaArea(double numeroUm, double numeroDois);
                 break;
-            // 10) Crie um programa que receba como entrada da classe Main o nome de um arquivo de texto que contenha valores numéricos e some todos os valores, imprimindo no console a soma.
+            // 10) Crie um programa que receba como entrada da classe Main o nome de um
+            // arquivo de texto que contenha valores numéricos e some todos os valores,
+            // imprimindo no console a soma.
             case 10:
                 // somaValoresArquivo(String arquivo);
                 break;
@@ -82,15 +106,35 @@ public class ExercicioTres {
                 System.out.println("Operação inválida");
                 break;
         }
-        
+
     }
 
     public static void tabuada(int numero) {
-        
+        int[] tabuada = ExercicioDois.tabuada(numero);
+        try {
+            FileWriter fw = new FileWriter("exercicio_tres_tabuada.txt");
+
+            for (int i = 0; i < tabuada.length; i++) {
+                fw.write(numero + " x " + i + " = " + tabuada[i]);
+            }
+
+        } catch (Exception e) {
+
+        }
+
     }
 
     public static void lerArquivoTexto(String arquivo) {
-        
+        File file = new File(arquivo);
+        if (file.exists()) {
+            try {
+                BufferedReader br = new BufferedReader(new FileReader(arquivo));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch(Exception e){}
+        }
     }
 
     public static int[] operacoesBasicas(int numeroUm, int numeroDois) {
@@ -98,11 +142,11 @@ public class ExercicioTres {
     }
 
     public static BigInteger bigIntExpo(BigInteger base, int pow) {
-        return base;
+        return base.pow(pow);
     }
 
     public static void aleatorizarPessoas(String pessoas[]) {
-        
+
     }
 
     public static double[] areaECircunferencia(double raio) {
@@ -114,7 +158,7 @@ public class ExercicioTres {
     }
 
     public static void dezDigitos(String arquivo) {
-        
+
     }
 
     public static double calculaArea(double numeroUm, double numeroDois) {
@@ -126,6 +170,6 @@ public class ExercicioTres {
     }
 
     public static void forcaComTxt() {
-        
+
     }
 }

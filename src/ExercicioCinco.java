@@ -25,7 +25,7 @@ public class ExercicioCinco {
         switch (menu) {
             // 1) Crie uma classe que represente uma Pessoa, devendo ter as propriedades Nome, Peso, Altura e Data de Nascimento e o método IMC, que retornará o valor do IMC.
             case 1:
-                // criarPessoa();
+                criarPessoa();
                 break;
             /* 2) Crie um programa que receba a pessoa criada e verifique qual o IMC.
 
@@ -39,7 +39,7 @@ public class ExercicioCinco {
             Acima de 40       | Obesidade Grau III (mórbida)
             */                
             case 2:
-                // verificarIMC();
+                verificarIMC();
                 break;
             // 3) Crie uma classe que represente uma Conta Corrente, devendo ter as propriedades Número da Conta, Agência, Saldo, Nome do Titular e os métodos Depósito, Saque e Saldo Total.
             case 3:
@@ -65,7 +65,7 @@ public class ExercicioCinco {
     }
 
     public static void criarPessoa() {
-        
+        Pessoa pessoa = new Pessoa("Alvaro", 115.0, 1.85, "28/12/1999");
     }
 
     public static void verificarIMC() {
